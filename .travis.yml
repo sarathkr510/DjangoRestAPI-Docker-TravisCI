@@ -7,3 +7,8 @@ before_scripts:
   - pip install docker-compose
 script:
   - docker-compose run app sh -c "python manage.py test && flake8"
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
